@@ -72,8 +72,9 @@ the challenge.
 ---
 
 _Space reserved for your comments, part 1._
-Le diagramme de flux qui est dans la description aide beaucoup.
 
+Le diagramme de flux qui est dans la description m'a aidé à classer les différents fichiers et à voir un peu mieux la manière
+ de travailler.
 
 ---
 
@@ -111,6 +112,15 @@ Please, provide, in the space below, any remarks or explanations related to your
 
 _Space reserved for your comments, part 4._
 
+Test: J'ai réalisé deux tests pour la classe "ShowNewsUseCase" avec mockito et une propriété pour vérifier les appels aux méthodes
+void (BDDMockito.verify(mock)).
+
+Externalisation de propriété: J'ai eu besoin d'externaliser des propriétés dans mon ancien projet et je pense que la solution
+mise en place est simple et facile à lire.
+
+REST endpoint: Je croyais que ça allait être le point le plus facile mais je ne suis pas capable de créer le beans dans le contexte de spring.
+Je vous laisse comme même la solution en commentaire (`NewsController.java`) pour pouvoir en discuter avec vous. :(
+
 ---
 
 ### Part 5: Discussion
@@ -128,6 +138,17 @@ as an adequate solution? What would you differently?
 ---
 
 _Space reserved for your comments, part 5._
+
+- Le scope "prototype" retourne une instance différente à chaque pétition demandé au conteneur de spring. Les beans avec un scope prototype
+garde un état du beans qu'ensuite on pourrait utiliser. Par contre, je n'ai jamais utilisé les "use case" comme beans avec spring mais 
+je trouve que c'est une très bonne solution pour manipuler des beans.
+
+- Je pense que je n'ai pas toutes les connaissances pour répondre à cette question.
+
+- Effectivement, la gestion du catch peut se faire autrement. Je dois dire que créer nos propres exceptions
+c'est toujours plus pratique.
+L'autre possible solution pourrait être d'éviter la création d'une méthode d'interface (presentError) pour présenter l'erreur
+mais peut-être créer une classe abstraite pour donner un autre comportement pour le catch d'erreur.
 
 ---
 
